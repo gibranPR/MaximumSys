@@ -11,6 +11,9 @@ public class MenuPrincipal extends JFrame implements ActionListener {
 	private Coordinador miCoordinador;
 	private Fondo Fondo;
 	private BotonTransparente btnAgregar;
+	private BotonTransparente btnStatus;
+	private BotonTransparente btnEmpleados;
+	private BotonTransparente botonTransparente;
 	public void setCoordinador(Coordinador miCoordinador){
 		this.miCoordinador = miCoordinador;
 	}
@@ -27,7 +30,14 @@ public class MenuPrincipal extends JFrame implements ActionListener {
 		setLocationRelativeTo(null);
 		setResizable(false);
 		componentes();
+		logica();
 		setVisible(true);
+	}
+
+	private void logica() {
+		btnAgregar.addActionListener(this);
+		btnStatus.addActionListener(this);
+		btnEmpleados.addActionListener(this);
 	}
 
 	private void componentes() {
@@ -37,7 +47,6 @@ public class MenuPrincipal extends JFrame implements ActionListener {
 		btnAgregar.setIcon(new ImageIcon(MenuPrincipal.class.getResource("/Recursos/img/fix.png")));
 		btnAgregar.setBounds(48, 250, 160, 200);
 		Fondo.add(btnAgregar);
-		btnAgregar.addActionListener(this);
 		
 		JLabel lblAgregar = new JLabel("AGREGAR");
 		lblAgregar.setForeground(Color.WHITE);
@@ -51,7 +60,7 @@ public class MenuPrincipal extends JFrame implements ActionListener {
 		lblEquipo.setBounds(50, 172, 160, 67);
 		Fondo.add(lblEquipo);
 		
-		BotonTransparente btnStatus = new BotonTransparente();
+		btnStatus = new BotonTransparente();
 		btnStatus.setIcon(new ImageIcon(MenuPrincipal.class.getResource("/Recursos/img/status.png")));
 		btnStatus.setBounds(304, 250, 160, 200);
 		Fondo.add(btnStatus);
@@ -68,7 +77,7 @@ public class MenuPrincipal extends JFrame implements ActionListener {
 		lblEmpleados.setBounds(515, 165, 250, 50);
 		Fondo.add(lblEmpleados);
 		
-		BotonTransparente btnEmpleados = new BotonTransparente();
+		btnEmpleados = new BotonTransparente();
 		btnEmpleados.setIcon(new ImageIcon(MenuPrincipal.class.getResource("/Recursos/img/business.png")));
 		btnEmpleados.setBounds(560, 250, 160, 200);
 		Fondo.add(btnEmpleados);
@@ -79,7 +88,7 @@ public class MenuPrincipal extends JFrame implements ActionListener {
 		lblVentas.setBounds(816, 165, 160, 50);
 		Fondo.add(lblVentas);
 		
-		BotonTransparente botonTransparente = new BotonTransparente();
+		botonTransparente = new BotonTransparente();
 		botonTransparente.setIcon(new ImageIcon(MenuPrincipal.class.getResource("/Recursos/img/shop.png")));
 		botonTransparente.setBounds(816, 250, 160, 200);
 		Fondo.add(botonTransparente);
@@ -95,6 +104,11 @@ public class MenuPrincipal extends JFrame implements ActionListener {
 			miCoordinador.getMiLogica().BotonesMenu(1);
 			return;
 		}
-		
+		if (evt.getSource()==btnStatus){
+			miCoordinador.setStatus(new Status());
+			miCoordinador.getStatus().setCoordinador(miCoordinador);
+			miCoordinador.getMiLogica().BotonesMenu(2);
+			return;
+		}
 	}
 }

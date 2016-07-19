@@ -19,7 +19,7 @@ public class Logica {
 	public void BotonesMenu(int boton){
 		switch(boton){
 		case 1:miCoordinador.getAgregaNota().setVisible(true);return;
-		case 2:return;
+		case 2:miCoordinador.getStatus().setVisible(true);return;
 		case 3:return;
 		case 4:return;
 		default:;

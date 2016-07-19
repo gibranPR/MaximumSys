@@ -70,11 +70,12 @@ public class Login extends JFrame implements ActionListener{
 				char contra = txtContra.getPassword()[i];
 				pass = pass + contra;
 			}
-			if(miCoordinador.checaLogin(pass)){
+			//if(miCoordinador.checaLogin(pass)){
 				miCoordinador.setMiMenuPrincipal(new MenuPrincipal());
 				miCoordinador.getMiMenuPrincipal().setCoordinador(miCoordinador);
 				miCoordinador.getMiMenuPrincipal().setVisible(true);
-			}
+				dispose();
+			//}
 		}
 	}
 	

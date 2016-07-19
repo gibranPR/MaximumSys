@@ -8,6 +8,7 @@ public class Coordinador {
 	private MenuPrincipal miMenuPrincipal;
 	private AgregaNota agregaNota;
 	private Usuario miUsuario;
+	private Status miStatus;
 	public Login getMiLogin() {
 		return miLogin;
 	}
@@ -40,5 +41,11 @@ public class Coordinador {
 	}
 	public void setMiUsuario(Usuario miUsuario) {
 		this.miUsuario = miUsuario;
+	}
+	public void setStatus(Status status) {
+		this.miStatus = status;		
+	}
+	public Status getStatus() {
+		return miStatus;
 	}
 }
