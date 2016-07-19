@@ -17,8 +17,8 @@ public class Status extends JDialog implements ActionListener{
 	private JLabel lbl2;
 	private JLabel lbl3;
 	private JLabel lbl4;
-	private JTextField txtBuscar;
 	private BotonTransparente btnBuscar;
+	private JTextField txtBuscar;
 	
 	public void setCoordinador(Coordinador miCoordinador){
 		this.miCoordinador = miCoordinador;
@@ -103,7 +103,9 @@ public class Status extends JDialog implements ActionListener{
 		getContentPane().add(btnBuscar);
 	}
 
-	public void actionPerformed(ActionEvent arg0) {
-		
+	public void actionPerformed(ActionEvent accion) {
+		if (accion.getSource() == btnBuscar){
+			JOptionPane.showMessageDialog(null, "Buscando el elemento "+txtBuscar.getText());
+		}
 	}
 }
