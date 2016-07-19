@@ -105,7 +105,7 @@ public class Status extends JDialog implements ActionListener{
 
 	public void actionPerformed(ActionEvent accion) {
 		if (accion.getSource() == btnBuscar){
-			JOptionPane.showMessageDialog(null, "Buscando el elemento "+txtBuscar.getText());
+			JOptionPane.showMessageDialog(null, "Buscando el elemento "+txtBuscar.getText());//
 		}
 	}
 }
