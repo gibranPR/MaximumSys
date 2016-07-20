@@ -26,6 +26,8 @@ public class AgregaNota extends JDialog implements ActionListener, ItemListener{
 		getContentPane().setBackground(UIManager.getColor("Button.background"));
 		getContentPane().setLayout(null);
 		setSize(800,600);
+		setModal(true);
+		setLocationRelativeTo(null);
 		componentes();
 		escuchas();
 	}

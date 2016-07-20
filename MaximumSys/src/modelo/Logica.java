@@ -22,7 +22,16 @@ public class Logica {
 		case 2:miCoordinador.getStatus().setVisible(true);return;
 		case 3:return;
 		case 4:return;
-		default:;
+		default:return;
+		}
+	}
+	public void botonesStatus(int boton){
+		switch(boton){
+		case 1:return;
+		case 2:return;
+		case 3:return;
+		case 4:return;
+		default:return;
 		}
 	}
 }
